@@ -1,0 +1,291 @@
+/* ==========================================================================
+   Veterinary Care - Dashboard Stylesheet
+   Role Dashboards: Owner, Veterinarian, Administrator
+   ========================================================================== */
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8fafc;
+}
+
+/* Sidebar Styling */
+.sidebar-wrapper {
+    width: 270px;
+    background: #0f172a;
+    color: #94a3b8;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1040;
+    border-right: 1px solid #1e293b;
+}
+
+.sidebar-header {
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar-header .brand-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.sidebar-nav {
+    padding: 1.25rem 0.85rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.nav-section-title {
+    font-size: 0.725rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.08em;
+    padding: 0.5rem 0.85rem;
+    margin-top: 0.75rem;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 0.25rem;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 0.95rem;
+    color: #94a3b8 !important;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-nav .nav-link i {
+    font-size: 1.15rem;
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+.sidebar-nav .nav-link:hover {
+    color: #ffffff !important;
+    background-color: #1e293b;
+}
+
+.sidebar-nav .nav-link:hover i {
+    color: #2dd4bf;
+}
+
+.sidebar-nav .nav-link.active {
+    color: #ffffff !important;
+    background: linear-gradient(90deg, #0d9488, #0f766e);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.sidebar-nav .nav-link.active i {
+    color: #ffffff;
+}
+
+.sidebar-footer {
+    padding: 1.2rem;
+    border-top: 1px solid #1e293b;
+    background: #090f1d;
+}
+
+.user-mini-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-avatar-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0d9488;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* Main Dashboard Content Area */
+.dashboard-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.dashboard-topbar {
+    height: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.dashboard-content-body {
+    padding: 1.85rem;
+    flex-grow: 1;
+}
+
+/* Summary Cards */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(13, 148, 136, 0.4);
+}
+
+.stat-card .stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-icon-teal { background: #ccfbf1; color: #0f766e; }
+.stat-icon-blue { background: #e0f2fe; color: #0369a1; }
+.stat-icon-amber { background: #fef3c7; color: #b45309; }
+.stat-icon-purple { background: #f3e8ff; color: #7e22ce; }
+.stat-icon-emerald { background: #d1fae5; color: #047857; }
+
+.stat-card .stat-value {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+    font-family: var(--font-heading);
+}
+
+.stat-card .stat-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--dark-muted);
+}
+
+/* Tables in Dashboards */
+.custom-table-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.75rem;
+}
+
+.custom-table-card .card-header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-table {
+    margin-bottom: 0;
+}
+
+.custom-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-size: 0.775rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    padding: 0.95rem 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.custom-table td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.92rem;
+}
+
+.custom-table tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* Empty State Component */
+.empty-state-box {
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+}
+
+.empty-state-icon {
+    width: 64px;
+    height: 64px;
+    background: #f1f5f9;
+    color: #94a3b8;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Responsive Sidebar Toggle */
+@media (max-width: 991.98px) {
+    .sidebar-wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -280px;
+    }
+    .sidebar-wrapper.show {
+        left: 0;
+    }
+    .sidebar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 23, 42, 0.5);
+        z-index: 1035;
+        display: none;
+    }
+    .sidebar-backdrop.show {
+        display: block;
+    }
+}

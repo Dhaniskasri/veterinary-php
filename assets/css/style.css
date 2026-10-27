@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Veterinary Care for Animal Medical Solution - Master Stylesheet
+   Theme: Mint Green, Medical Teal, Deep Slate, High Polish
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #0d9488;         /* Vibrant Medical Teal */
+    --primary-dark: #0f766e;    /* Deep Forest Teal */
+    --primary-light: #ccfbf1;   /* Soft Mint Mist */
+    --primary-subtle: #f0fdfa;  /* Mint Page Tint */
+    --secondary: #0284c7;       /* Clinical Sky Blue */
+    --accent: #10b981;          /* Healing Emerald */
+    --dark: #0f172a;            /* Deep Slate Text */
+    --dark-muted: #475569;      /* Medium Slate */
+    --light-bg: #f8fafc;        /* Pearl Gray / Clean Off-White */
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --border-focus: #0d9488;
+    --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-pill: 9999px;
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+    --shadow-md: 0 4px 18px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+    --shadow-lg: 0 12px 30px -4px rgba(13, 148, 136, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* Global Reset & Base */
+body {
+    font-family: var(--font-body);
+    color: var(--dark);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--dark);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Primary Button Styling */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.625rem 1.35rem;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(13, 148, 136, 0.25);
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all 0.25s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btn-pill {
+    border-radius: var(--radius-pill) !important;
+}
+
+/* Navbar Custom Styling */
+.navbar-custom {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.85rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--primary-dark) !important;
+}
+
+.navbar-brand-logo .brand-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--dark-muted) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary) !important;
+    background-color: var(--primary-subtle);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+    padding: 4.5rem 0 3.5rem;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 0.875rem;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-pill);
+    margin-bottom: 1.25rem;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1.15;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 1.25rem;
+}
+
+.hero-title .text-highlight {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-lead {
+    font-size: 1.15rem;
+    color: var(--dark-muted);
+    margin-bottom: 2rem;
+    max-width: 580px;
+}
+
+/* Feature Cards & Glass Components */
+.feature-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(13, 148, 136, 0.35);
+}
+
+.feature-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.feature-icon-teal {
+    background: #ccfbf1;
+    color: #0d9488;
+}
+
+.feature-icon-blue {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.feature-icon-emerald {
+    background: #d1fae5;
+    color: #10b981;
+}
+
+.feature-icon-amber {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+/* Form Styles */
+.form-label {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.form-control, .form-select {
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    padding: 0.65rem 0.95rem;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
+}
+
+.auth-card {
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem;
+}
+
+/* Medical Disclaimer Banner */
+.medical-disclaimer-box {
+    background-color: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-left: 4px solid #f59e0b;
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    font-size: 0.875rem;
+    color: #92400e;
+}
+
+/* Footer */
+.footer-main {
+    background-color: #09131f;
+    color: #94a3b8;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid #1e293b;
+}
+
+.footer-main h5 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-link {
+    color: #94a3b8;
+    display: block;
+    margin-bottom: 0.6rem;
+    font-size: 0.92rem;
+    transition: color 0.2s;
+}
+
+.footer-link:hover {
+    color: #2dd4bf;
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1e293b;
+    padding-top: 1.75rem;
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+}
+
+/* Animals Grid Card */
+.animal-profile-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s ease;
+}
+
+.animal-profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.animal-thumb-wrapper {
+    height: 180px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.animal-thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Print Styles for Prescriptions & Medical Cards */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+    .no-print, .sidebar-wrapper, .navbar-custom, .footer-main, .btn, .flash-messages-container {
+        display: none !important;
+    }
+    .print-only {
+        display: block !important;
+    }
+    .card {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+}
